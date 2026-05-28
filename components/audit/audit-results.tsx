@@ -105,14 +105,17 @@ export function AuditResults() {
       current={
         result.totalMonthlySavings +
         result.recommendations.reduce(
-          (acc, item) =>
+         (
+      acc: number,
+       item: any
+       ) =>
             acc +
             item.optimizedMonthlyCost,
           0
         )
       }
       optimized={result.recommendations.reduce(
-        (acc, item) =>
+        (acc: number, item: any) =>
           acc +
           item.optimizedMonthlyCost,
         0
@@ -126,8 +129,8 @@ export function AuditResults() {
       <div className="mt-10 space-y-6">
         {result.recommendations.map(
           (
-            recommendation,
-            index
+            recommendation: any,
+            index: number
           ) => (
             <Card
               key={`${recommendation.tool}-${index}`}
